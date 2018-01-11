@@ -26,9 +26,13 @@ public class App {
 
             String item = req.queryParams("item");
             int quantity = Integer.parseInt(req.queryParams("quantity"));
-            Float price = Float.parseFloat(req.queryParams("price"));
+            float price = Float.parseFloat(req.queryParams("price"));
 
-//            Grocery newGrocery = new Grocery(item, quantity, price);
+
+            Grocery newGrocery = new Grocery(item, quantity, price);
+            model.put("item", newGrocery);
+            model.put("quantity", newGrocery);
+            model.put("price", newGrocery);
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
 

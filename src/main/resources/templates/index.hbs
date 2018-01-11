@@ -1,15 +1,15 @@
 {{#partial "content"}}
     <div class="well">
 
-    {{#if posts}}
-        {{#each posts }}
+    {{#if groceries}}
+        {{#each groceries }}
             {{#if firstPost}}
                     <h4>Current list:</h4>
             {{/if}}
-                <p>{{ content }} <a href="/posts/{{id}}">read more...</a></p>
+                    <p>{{ content }}</p>
         {{/each}}
     {{else}}
-            <p>No posts!</p>
+            <p>No Groceries!</p>
         </div>
     {{/if}}
 {{/partial}}
