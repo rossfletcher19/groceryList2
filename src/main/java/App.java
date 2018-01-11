@@ -21,12 +21,12 @@ public class App {
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
-        post("/post/new",  (request, response)  -> {
+        post("/post/new",  (req, response)  -> {
             Map<String, Object> model = new HashMap<>();
 
-            String item = request.queryParams("item");
-            String quantity = request.queryParams("quantity");
-            String price = request.queryParams("price");
+            String item = req.queryParams("item");
+            int quantity = Integer.parseInt(req.queryParams("quantity"));
+            Float price = Float.parseFloat(req.queryParams("price"));
 
 //            Grocery newGrocery = new Grocery(item, quantity, price);
             return new ModelAndView(model, "success.hbs");
