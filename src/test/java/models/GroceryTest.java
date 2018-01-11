@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 public class GroceryTest {
 
     public Grocery setUpNewGroceryList() {
-        return new Grocery("bananas");
+        return new Grocery("bananas", 5, 3);
     }
 
     @Before
@@ -25,7 +25,7 @@ public class GroceryTest {
 
     @Test
     public void NewGroceryListInstanciatesCorrectly_true() throws Exception {
-        Grocery grocery = new Grocery("Item1");
+        Grocery grocery = new Grocery("bananas", 5, 3);
         assertEquals(true, grocery instanceof Grocery);
 
     }
@@ -34,7 +34,12 @@ public class GroceryTest {
     public void item_getsItem_item() throws Exception {
         Grocery testGrocery = setUpNewGroceryList();
         assertEquals("bananas", testGrocery.getItem());
+    }
 
+    @Test
+    public void item_getsQty_qty() throws Exception {
+        Grocery testGrocery = setUpNewGroceryList();
+        assertEquals(5, testGrocery.getQuantity());
     }
 
 }

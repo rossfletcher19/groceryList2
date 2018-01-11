@@ -7,7 +7,7 @@ public class Grocery {
     private int quantity;
     private float price;
 
-    public Grocery (String item) {
+    public Grocery (String item, int quantity, float price) {
         this.item = item;
         this.quantity = quantity;
         this.price = price;
