@@ -31,15 +31,21 @@ public class GroceryTest {
     }
 
     @Test
-    public void item_getsItem_item() throws Exception {
+    public void item_getItem_item() throws Exception {
         Grocery testGrocery = setUpNewGroceryList();
         assertEquals("bananas", testGrocery.getItem());
     }
 
     @Test
-    public void item_getsQty_qty() throws Exception {
+    public void qty_getQty_qty() throws Exception {
         Grocery testGrocery = setUpNewGroceryList();
         assertEquals(5, testGrocery.getQuantity());
+    }
+
+    @Test
+    public void price_getPrice_price() throws Exception {
+        Grocery testGrocery = setUpNewGroceryList();
+        assertEquals(4, testGrocery.getPrice(), 1);
     }
 
 }
