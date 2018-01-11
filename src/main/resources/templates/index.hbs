@@ -1,17 +1,29 @@
 {{#partial "content"}}
-    <div class="well">
 
-    {{#if groceries}}
-        {{#each groceries }}
-            {{#if firstPost}}
-                    <h4>Current list:</h4>
-            {{/if}}
-                    <p>{{ content }}</p>
-        {{/each}}
-    {{else}}
-            <p>No Groceries!</p>
-        </div>
+    <h1>Post list!</h1>
+
+    {{#if groceries}} <!--if posts exist, then -->
+    {{#each groceries }} <!--loop-->
+    <p>Current post:</p>
+    <p>{{ content }} <a href="/posts/{{id}}">read more...</a></p> <!--show-->
+    {{/each}}
+    {{else}} <!--no posts!-->
+    <p>No posts!</p>
     {{/if}}
+
+    <p>Add a new Item:</p>
+
+    <form action='/groceries/new' method="post">
+        <label>Item</label>
+        <input id="item" name="item" type="text">
+        <label>Quantity</label>
+        <input id="quantity" name="quantity" type="text">
+        <label>Price</label>
+        <input id="quantity" name="quantity" type="text">
+        <div class="buttonHolder">
+            <button type="submit" class="btn-primary">Add item to list!</button>
+        </div>
+    </form>
 {{/partial}}
 
 {{> layout.hbs}}

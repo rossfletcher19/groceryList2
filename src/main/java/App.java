@@ -13,10 +13,13 @@ public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
 
-        get("/post/new", (req, res) -> {
+        get("/groceries/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "newpost-form.hbs");
         }, new HandlebarsTemplateEngine());
+
+
+
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             ArrayList<Grocery> groceries = Grocery.getAll();
