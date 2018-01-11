@@ -1,0 +1,72 @@
+{{#block "header"}}
+    <!DOCTYPE html>
+
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{{#block "title"}}Grocery List{{/block}}</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='/app.css'>
+    </head>
+{{/block}}
+    <body>
+
+    <div class="container">
+    <div class="jumbotron">
+        <h1>Welcome to Your Grocery List<br> We love our food!!</h1>
+    </div>
+    <!--begin main template-->
+    <div class="row">
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Site Nav</h4>
+                </div>
+                <div class="panel-body">
+                    <ul class="">
+                        <li role="presentation" class="active"><a href="/">Home</a></li>
+                        <li role="presentation"><a href="/posts">See Grocery List</a></li>
+                        <li role="presentation"><a href="/posts/new">Add a New </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9" id="home">
+            <div class="panel panel-default panel-transparent">
+                <div class="panel-heading">
+                    <h4>Grocery List</h4>
+                </div>
+                <div class="panel-body">
+                    <form action='/post/new' method="post">
+                        <label>Item</label>
+                        <input id="item" name="item" type="text">
+                        <label>Quantity</label>
+                        <input id="quantity" name="quantity" type="text">
+                        <label>Album Title</label>
+                        <input id="quantity" name="quantity" type="text">
+                        <div class="buttonHolder">
+                        <button type="submit" class="btn-primary">Add item to list!</button>
+                        </div>
+                    </form>
+                    <hr>
+                    {{#block "content"}}
+                    {{/block}}
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!--end main template-->
+{{#block "footer"}}
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted"><a href="/posts/delete">DELETE ALL POSTS</a></p>
+        </div>
+    </footer>
+    </body>
+    </html>
+{{/block}}

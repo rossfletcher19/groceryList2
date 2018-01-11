@@ -51,4 +51,8 @@ public class Grocery {
     public static void clearInstances() {
         instances.clear();
     }
+
+    public static ArrayList<Grocery> getAll() {
+        return instances;
+    }
 }

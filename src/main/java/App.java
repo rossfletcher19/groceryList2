@@ -15,8 +15,8 @@ public class App {
 
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
-//            ArrayList<Grocery> groceries = Grocery.getAll();
-//            model.put("groceries", groceries);
+            ArrayList<Grocery> groceries = Grocery.getAll();
+            model.put("groceries", groceries);
 
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());

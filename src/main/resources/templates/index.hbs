@@ -1,0 +1,17 @@
+{{#partial "content"}}
+    <div class="well">
+
+    {{#if posts}}
+        {{#each posts }}
+            {{#if firstPost}}
+                    <h4>Current list:</h4>
+            {{/if}}
+                <p>{{ content }} <a href="/posts/{{id}}">read more...</a></p>
+        {{/each}}
+    {{else}}
+            <p>No posts!</p>
+        </div>
+    {{/if}}
+{{/partial}}
+
+{{> layout.hbs}}
