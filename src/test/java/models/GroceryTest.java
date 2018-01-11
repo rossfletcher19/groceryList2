@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.Assert.*;
 
 /**
@@ -21,6 +23,7 @@ public class GroceryTest {
 
     @After
     public void tearDown() throws Exception {
+        Grocery.clearInstances();
     }
 
     @Test
@@ -46,6 +49,28 @@ public class GroceryTest {
     public void price_getPrice_price() throws Exception {
         Grocery testGrocery = setUpNewGroceryList();
         assertEquals(4, testGrocery.getPrice(), 1);
+    }
+
+//    @Test
+//    public void linePrice_testLinePrice() {
+//        Grocery testGrocery = setUpNewGroceryList();
+//        assertEquals(15, testGrocery.getLinePriceTotal(),1);
+//    }
+
+    @Test
+    public void getTotal_getCostTotal_totalCost() {
+//        ArrayList<Grocery> instances = new ArrayList<>();
+        Grocery testGrocery = new Grocery("bananas", 5, 3);
+        Grocery testSecondBeta = new Grocery("apples", 3, 2);
+
+//        float allTotal = Grocery.getTotal();
+
+        assertEquals(21, Grocery.getTotal(), 0);
+
+
+//
+
+        //assertEquals(18, Grocery.getTotal(),0);
     }
 
 }
